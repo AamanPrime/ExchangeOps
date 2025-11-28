@@ -1,0 +1,16 @@
+{
+  "exchanges": [
+    {
+      "name": "NSE",
+      "failure_rate": 0.1
+    },
+    {
+      "name": "BSE",
+      "failure_rate": 0.05
+    },
+    {
+      "name": "CRYPTO_X",
+      "failure_rate": 0.3
+    }
+  ]
+}
