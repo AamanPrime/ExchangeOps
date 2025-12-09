@@ -1,0 +1,26 @@
+2026-07-02 16:20:22,748 - INFO - Starting auto-remediation daemon... (Interval: 10s, Dry-run: True)
+2026-07-02 16:20:22,752 - ERROR - Failed to poll incidents: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/incidents/?status=open (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-07-02 16:20:32,755 - ERROR - Failed to poll incidents: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/incidents/?status=open (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-07-04 15:37:25,338 - INFO - Starting auto-remediation daemon... (Interval: 10s, Dry-run: True)
+2026-07-04 15:37:25,341 - ERROR - Failed to poll incidents: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/incidents/?status=open (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-07-04 15:39:51,553 - INFO - Starting auto-remediation daemon... (Interval: 10s, Dry-run: True)
+2026-07-04 15:39:51,583 - INFO - Attempting API restart for incident 208 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:39:51,583 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:41:31,810 - INFO - Attempting API restart for incident 209 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:41:31,810 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:43:22,050 - INFO - Attempting API restart for incident 210 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:43:22,050 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:43:42,102 - INFO - Attempting API restart for incident 211 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:43:42,102 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:47:02,617 - INFO - Attempting API restart for incident 213 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:47:02,617 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:49:33,029 - INFO - Attempting API restart for incident 214 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:49:33,029 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:51:23,328 - INFO - Attempting API restart for incident 215 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:51:23,329 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:51:43,385 - INFO - Attempting API restart for incident 216 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:51:43,386 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:53:13,631 - INFO - Attempting API restart for incident 218 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:53:13,631 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 15:53:33,686 - INFO - Attempting API restart for incident 219 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 15:53:33,686 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
