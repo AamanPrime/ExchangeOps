@@ -1,0 +1,10 @@
+---
+- name: Deploy ExchangeOps Stack
+  hosts: exchangeops
+  become: yes
+  roles:
+    - { role: common, tags: ['common'] }
+    - { role: postgres, tags: ['postgres'] }
+    - { role: simulator, tags: ['simulator'] }
+    - { role: backend, tags: ['backend'] }
+    - { role: frontend, tags: ['frontend'] }

@@ -1,0 +1,43 @@
+---
+- name: Build React frontend
+  command: npm run build
+  args:
+    chdir: "{{ repo_path }}/frontend"
+
+- name: Create web directory
+  file:
+    path: /var/www/exchangeops
+    state: directory
+    owner: "{{ app_user }}"
+
+- name: Copy frontend build to web directory
+  copy:
+    src: "{{ repo_path }}/frontend/dist/"
+    dest: /var/www/exchangeops/
+    remote_src: yes
+    owner: "{{ app_user }}"
+
+- name: Template Nginx config
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/exchangeops
+  notify: reload nginx
+
+- name: Enable Nginx site
+  file:
+    src: /etc/nginx/sites-available/exchangeops
+    dest: /etc/nginx/sites-enabled/exchangeops
+    state: link
+  notify: reload nginx
+
+- name: Remove default Nginx site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: reload nginx
+
+- name: Ensure Nginx is running
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes

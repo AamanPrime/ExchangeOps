@@ -1,0 +1,18 @@
+---
+- name: Build Simulator binary
+  command: /home/aamanprime/go/bin/go build -o simulator
+  args:
+    chdir: "{{ repo_path }}/simulator"
+    creates: "{{ repo_path }}/simulator/simulator"
+
+- name: Template simulator systemd service
+  template:
+    src: exchange-simulator.service.j2
+    dest: /etc/systemd/system/exchange-simulator.service
+  notify: reload systemd
+
+- name: Enable and start simulator service
+  systemd:
+    name: exchange-simulator
+    enabled: yes
+    state: started

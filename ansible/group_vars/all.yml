@@ -1,0 +1,9 @@
+---
+app_user: "aamanprime"
+repo_path: "/home/aamanprime/Projects/ExchangeOPS"
+postgres_db: "exchangeops"
+postgres_user: "exchangeops"
+postgres_password: "devpassword"
+django_secret_key: "django-insecure-dummy-key-for-ansible-setup"
+simulator_port: 8088
+backend_port: 8000

@@ -1,0 +1,12 @@
+---
+- name: Install common packages
+  apt:
+    name:
+      - git
+      - curl
+      - build-essential
+      - python3-venv
+      - python3-pip
+      - nginx
+    state: present
+    update_cache: yes

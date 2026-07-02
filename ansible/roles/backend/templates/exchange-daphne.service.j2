@@ -1,0 +1,14 @@
+[Unit]
+Description=ExchangeOps Django Backend (Daphne)
+After=network.target
+
+[Service]
+User={{ app_user }}
+WorkingDirectory={{ repo_path }}/backend
+Environment="DATABASE_URL=postgres://{{ postgres_user }}:{{ postgres_password }}@localhost/{{ postgres_db }}"
+Environment="SIMULATOR_URL=http://localhost:{{ simulator_port }}"
+ExecStart={{ repo_path }}/backend/venv/bin/daphne -b 0.0.0.0 -p {{ backend_port }} exchangeops_backend.asgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

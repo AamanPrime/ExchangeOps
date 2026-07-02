@@ -1,0 +1,26 @@
+---
+- name: Run Django migrations
+  command: "{{ repo_path }}/backend/venv/bin/python manage.py migrate"
+  args:
+    chdir: "{{ repo_path }}/backend"
+
+- name: Template Daphne systemd service
+  template:
+    src: exchange-daphne.service.j2
+    dest: /etc/systemd/system/exchange-daphne.service
+  notify: reload systemd
+
+- name: Template Poller systemd service
+  template:
+    src: exchange-poller.service.j2
+    dest: /etc/systemd/system/exchange-poller.service
+  notify: reload systemd
+
+- name: Enable and start backend services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  loop:
+    - exchange-daphne
+    - exchange-poller

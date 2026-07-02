@@ -1,0 +1,14 @@
+[Unit]
+Description=ExchangeOps Poller
+After=network.target exchange-daphne.service
+
+[Service]
+User={{ app_user }}
+WorkingDirectory={{ repo_path }}/backend
+Environment="DATABASE_URL=postgres://{{ postgres_user }}:{{ postgres_password }}@localhost/{{ postgres_db }}"
+Environment="SIMULATOR_URL=http://localhost:{{ simulator_port }}"
+ExecStart={{ repo_path }}/backend/venv/bin/python manage.py poll_exchanges
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

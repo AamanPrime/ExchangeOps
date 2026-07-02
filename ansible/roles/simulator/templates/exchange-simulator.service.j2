@@ -1,0 +1,12 @@
+[Unit]
+Description=ExchangeOps Simulator
+After=network.target
+
+[Service]
+User={{ app_user }}
+WorkingDirectory={{ repo_path }}/simulator
+ExecStart={{ repo_path }}/simulator/simulator
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
