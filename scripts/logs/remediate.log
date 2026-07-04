@@ -24,3 +24,9 @@
 2026-07-04 15:53:13,631 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
 2026-07-04 15:53:33,686 - INFO - Attempting API restart for incident 219 (Exchange CRYPTO_X). Attempt 1/2
 2026-07-04 15:53:33,686 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 16:06:25,843 - INFO - Attempting API restart for incident 220 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 16:06:25,844 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 16:07:26,015 - INFO - Attempting API restart for incident 221 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 16:07:26,015 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
+2026-07-04 16:09:56,444 - INFO - Attempting API restart for incident 223 (Exchange CRYPTO_X). Attempt 1/2
+2026-07-04 16:09:56,444 - INFO - [DRY-RUN] Would POST http://localhost:8000/api/exchanges/4/restart/
