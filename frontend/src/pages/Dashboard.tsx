@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Box, Typography, Grid, Card, CardContent, CardActions, Button, Chip, Snackbar, Alert } from '@mui/material';
 import { useAuth } from '../context/AuthContext';
 import type { Exchange } from '../types';
@@ -94,7 +94,7 @@ const Dashboard = () => {
 
     return (
         <Box>
-            <Typography variant="h4" gutterBottom fontWeight="bold" color="text.primary">
+            <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: 'text.primary' }}>
                 Connection Health
             </Typography>
             <Grid container spacing={3}>
@@ -110,11 +110,11 @@ const Dashboard = () => {
                     const canRestart = user?.role === 'infra' || user?.role === 'ops' || user?.role === 'admin';
 
                     return (
-                        <Grid item xs={12} sm={6} md={4} key={exchange.id}>
+                        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={exchange.id}>
                             <Card sx={{ borderRadius: 2, boxShadow: 2 }}>
                                 <CardContent>
-                                    <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                                        <Typography variant="h6" fontWeight="bold">
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                                             {exchange.name}
                                         </Typography>
                                         <Chip label={status} color={color} size="small" />

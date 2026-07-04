@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Box, Button, TextField, Typography, Paper, Alert, Grid } from '@mui/material';
@@ -31,7 +31,7 @@ const Login = () => {
             backgroundColor: '#1e293b'
         }}>
             <Paper elevation={3} sx={{ p: 4, width: '100%', maxWidth: 400, borderRadius: 2 }}>
-                <Typography variant="h4" gutterBottom align="center" fontWeight="bold" color="primary">
+                <Typography variant="h4" gutterBottom align="center" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                     ExchangeOps
                 </Typography>
                 <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
@@ -72,12 +72,12 @@ const Login = () => {
                 </form>
 
                 <Box sx={{ mt: 3, p: 2, bgcolor: '#f8fafc', borderRadius: 1, border: '1px solid #e2e8f0' }}>
-                    <Typography variant="caption" display="block" fontWeight="bold" color="text.secondary" gutterBottom>
+                    <Typography variant="caption" sx={{ display: 'block', fontWeight: 'bold', color: 'text.secondary', mb: 1 }}>
                         Demo Credentials (Password: demo123)
                     </Typography>
                     <Grid container spacing={1}>
                         {['quant', 'infra', 'compliance', 'ops', 'admin'].map((role) => (
-                            <Grid item xs={6} key={role}>
+                            <Grid size={{ xs: 6 }} key={role}>
                                 <Button 
                                     size="small" 
                                     variant="outlined" 

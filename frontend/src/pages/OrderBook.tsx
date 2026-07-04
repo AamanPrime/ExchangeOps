@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -33,17 +33,17 @@ const OrderBookPage = () => {
 
     return (
         <Box>
-            <Box display="flex" alignItems="center" mb={3}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <Button startIcon={<ArrowBackIcon />} onClick={() => navigate(-1)} sx={{ mr: 2 }}>
                     Back
                 </Button>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     Order Book: {exchangeName}
                 </Typography>
             </Box>
 
             <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                     <Paper sx={{ p: 2 }}>
                         <Typography variant="h6" color="success.main" gutterBottom>
                             Bids (Buy)
@@ -68,7 +68,7 @@ const OrderBookPage = () => {
                         </TableContainer>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                     <Paper sx={{ p: 2 }}>
                         <Typography variant="h6" color="error.main" gutterBottom>
                             Asks (Sell)

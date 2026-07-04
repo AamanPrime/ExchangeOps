@@ -1,14 +1,12 @@
-import React from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
     AppBar, Toolbar, Typography, Drawer, List, ListItem,
     ListItemButton, ListItemIcon, ListItemText, Box, Button,
-    CssBaseline, Divider
+    CssBaseline
 } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useAuth } from '../context/AuthContext';
 
 const drawerWidth = 240;
@@ -73,10 +71,11 @@ const Layout = () => {
                                             {item.icon}
                                         </ListItemIcon>
                                         <ListItemText
-                                            primary={item.text}
-                                            primaryTypographyProps={{
-                                                fontWeight: location.pathname.startsWith(item.path) ? 'bold' : 'normal'
-                                            }}
+                                            primary={
+                                                <Typography sx={{ fontWeight: location.pathname.startsWith(item.path) ? 'bold' : 'normal' }}>
+                                                    {item.text}
+                                                </Typography>
+                                            }
                                         />
                                     </ListItemButton>
                                 </ListItem>

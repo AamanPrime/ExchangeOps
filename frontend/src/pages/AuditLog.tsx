@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Typography, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import api from '../api/axios';
 import type { AuditLog } from '../types';
@@ -20,7 +20,7 @@ const AuditLogPage = () => {
 
     return (
         <Box>
-            <Typography variant="h4" fontWeight="bold" color="text.primary" mb={3}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'text.primary', mb: 3 }}>
                 System Audit Log
             </Typography>
 
